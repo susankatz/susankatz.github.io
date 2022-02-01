@@ -1,0 +1,21 @@
+body {
+    background-color: purple;
+    color: white
+}
+p#purpleparagraph {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: slateblue;
+    font-size: 32px;
+}
+h1 {
+    font-size: 64px; 
+    color:blueviolet; 
+    background-color: thistle;
+    margin: 0px; 
+    padding:10px;
+}
+.square {
+    height: 100px;
+    width: 100px;
+    fill: #a97aeb;
+}
