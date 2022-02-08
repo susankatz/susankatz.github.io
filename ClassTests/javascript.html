@@ -5,6 +5,79 @@
     <title>In-Class JavaScript</title>
   </head>
   <body>
+    <h1 id="welcome"></h1>
 
+    <script src="./math.js"></script>
+
+    <script>
+        // Numbers
+            var myNumber = 77;
+            myNumber = myNumber + 11;
+            console.log(myNumber, myNumber / 2);
+
+        // Strings
+            var myString = "Javascript is Cool!";
+            console.log("D3 and " + myString)
+
+        // Booleans
+            var bigNumber = myNumber > 100; 
+            console.log(bigNumber)
+
+        // Arrays
+             var myArray = ["Susan", myNumber, bigNumber, false, 100];
+            console.log(myArray)
+  
+        // Object Variables
+        var user = {
+            name: "Susan",
+            color: "violet",
+            height: 72,
+            dog: "Milo",
+            favoriteNumber: myNumber
+        };
+        console.log(user.name)
+
+        // Functions
+            var sayHello = function (name) {
+                var helloString = "Hello " + name + "!";
+                console.log("Hello " + name + "!");
+                return helloString;
+            }
+    
+            sayHello("UziSuzie");
+            sayHello(user.name);
+            var myDogString = sayHello(user.dog);
+            var mySusanString = sayHello(user.name);
+            console.log(myDogString, mySusanString)
+
+
+           var fourSquare = squarify(4);
+           var hundredSquared = squarify(100);
+
+            console.log(fourSquare);
+            console.log(hundredSquared);
+
+        // Function Variables
+            var sayText = function(txt) {
+                console.log(sayText)
+            }
+        
+        // Conditional Statements
+            if (myNumber > 100) {
+                console.log("Wow, greater than 100");
+            }
+            else if (myNumber > 80) {
+                console.warn("Ok, fine its kind of bigger ");
+            }
+            else if (myNumber < 80) {
+                console.log("Lame");
+            }
+
+        // Interacting with Elements
+            var title = document.getElementById("welcome");
+            console.log(title);
+            title.innerHTML = "Welcome " + user.name + "!";
+    </script>
+   
   </body>
 </html>
