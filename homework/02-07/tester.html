@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Homework 02-07</title>
-<style type="text/css">
-<!--
-body { background-color:#ededed; font:normal 12px/18px Arial, Helvetica, sans-serif; }
-h1 { display:block; width:600px; margin:20px auto; padding-bottom:20px; font:normal 24px/30px Georgia, "Times New Roman", Times, serif; color:#333; text-shadow: 1px 2px 3px #ccc; border-bottom:1px solid #cbcbcb; }
-
-#myCanvas { background:#fff; border:1px solid #cbcbcb; }
-#nav { display:block; width:100%; text-align:center; }
-#nav li { display:block; font-weight:bold; line-height:21px; text-shadow:1px 1px 1px #fff; width:100px; height:21px; padding:5px; margin:0 10px; background:#e0e0e0; border:1px solid #ccc; -moz-border-radius:4px;-webkit-border-radius:4px; border-radius:4px; float:left; }
-#nav li a { color:#000; display:block; text-decoration:none; width:100%; height:100%; }
--->
-</style>
-<script type="text/javascript">
-function myFunction () {
-
-        var context;
-        var dx= 4;  
-        var dy=4;
-        var y=150;
-        var x=10;
-        function draw(){
-            context= myCanvas.getContext('2d');
-            context.clearRect(0,0,400,400);
-            context.beginPath();
-            context.fillStyle="#000000";
-            context.arc(x,y,10,0,Math.PI*2,true);
-            context.closePath();
-            context.fill();
-            if( x<0 || x>400)
-            dx=-dx;
-            if( y<0 || y>300)
-            dy=-dy;
-            x+=dx;
-            y+=dy;
-        }
-        setInterval(draw,10); 
-}
-</script>
-
-</head>
+    <meta charset="utf-8" />
+    <title>HOMEWORK 02-07</title>
+    <link rel="stylesheet" href="style.css" />
 <body>
+    <h1>HOMEWORK 02-07</h1>
+    <button type="button" onclick="myFunction();">CLICK ME</button>
+   
+    <div id="contentContainer"></div>
+   
+    <div id="circle">
+        <p>Hi</p>
+    </div>
+        
+      <script>
+        function myFunction (){
+            var circle = document.querySelector("#circle");
 
-<div id="container">
+            var xPos = 0;
+            var yPos = 0;
+            var angle = 0;
 
-    <canvas id="myCanvas" width="400" height="300"></canvas>
+            function animate() {
+                xPos += 10;
+                angle += .08;
+  
+                yPos = Math.round(50 * Math.sin(angle));
 
+                circle.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
 
+                if (Math.abs(xPos) >= 2000) {
+                xPos = -2000;
+                }
 
-</div>
-<input id="button" type="submit" name="button" value="enter" onclick="myFunction();"/>
+                if (angle > 2 * Math.PI) {
+                angle = 0;
+                }
 
+                requestAnimationFrame(animate);
+                }
+        animate();
+        }
+      </script>
+
+<!-- Return to Home -->
+<p>
+    <script src="script27.js"></script>
+    <div class="action" onclick="actionToggle();">
+        <span>+</span>
+        <ul>
+          <li><a href="https://susankatz.github.io/" alt="" width="25px">Return to Homepage</li>
+        </ul>
+      </div>
+</p>
 </body>
 </html> 
