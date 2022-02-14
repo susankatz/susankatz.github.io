@@ -1,8 +1,4 @@
-function myFunction () {
-   function setup() {
-       createCanvas(400,400)
-   }
-   function draw() {
-       background(220)
-   }
-}
+function actionToggle() {
+    const action = document.querySelector('.action');
+    action.classList.toggle('active')
+  }
