@@ -2,20 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>D3</title>
+        <title>Homework 02-14</title>
         <script src="https://d3js.org/d3.v7.min.js"></script>
-        <style>
-            .big {
-                font-size: 100px;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-       <h1 id="title">Welcome!</h1>
-        
-        <svg id="rectCanvas">
-
-        </svg>
+       <h1>Welcome!</h1>
 
         <script>
         
@@ -29,7 +21,7 @@
                     value: 13
                 },
                 {
-                    country: "emu",
+                    animal: "emu",
                     value: 5
                 },
                 {
@@ -37,46 +29,42 @@
                     value: 41
                 },
                 {
-                    country: "minature horse",
+                    animal: "minature horse",
                     value: 2
                 }
             ];
+        
+        function drawsquare(animals){
+            var canvas = d3.select("body")
+                    .append("svg")
+                    .attr("width", 500)
+                    .attr("height", 500)
+            
+                   
+            var canvas = d3.select("body").append("svg")
+                        .attr("width", 500)
+                        .attr("height", 500)
 
-            function drawSquares(dataArray) {
-                // data binding 
-                var squares = d3.select("#rectCanvas")
-                .selectAll("rect")
-                .data(dataArray, function(currentDataPoint) {
-                    console .log(currentDataPoint.animal);
-                    return currentDataPoint.animal;
-                });
-                // update
-                squares
-                    .transition().duration(1000)
-                    .attr("width", function (d) { return d.value * 10; })
-                        .attr("height", 48)
-                        .attr("y", function (d, i) { return i * 50; })
-                        .attr("fill", "white");
-                // enter
-                squares.enter().append("rect")
-                    .attr("height", 100)
-                    .attr("y", function(d) {
-                        return d.value * 10;
-                    })
-                    .transition()
-                    .duration(2000)
-                    .attr("y", function(d) {
-                        return d.value;
-                    });
-                // exit
-                squares.exit()
-                .transtion().duration(1000)
-                .attr("y", 0)
-                .attr("fill", "red")
-                .remove("rect");
-            }
+            canvas.selectAll("rect")
+            .data(animals)
+            .enter()
+            .append("rect")
+            .attr("width", function (animals) { return animals.value * 10; })
+            .attr("height", 48)
+            .attr("y", function (animals, i) { return i * 10; })
+            .attr("fill", "black");
 
-            drawSquares(animals);
+            canvas.selectAll("text")
+            .data(animals)
+            .enter()
+            .append("text")
+            .attr("fill", "black")
+            .attr("y", function (animals, i) { return i * 10; })
+            .text(function (animals) { return animals.animal; })
+        }
+
+d3.csv("fakedata.csv", function (data) {
+console.log(data); });
 
         </script>
     </body>

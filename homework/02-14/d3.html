@@ -8,35 +8,34 @@
     </head>
     <body>
         <h1>Homework 02-14</h1>
-       <h2>Comparing the heights of random animals to eachother (in feet)</h2>
+       
 
         <script>
-            d3.json("animals.json").then(function (data){
-
+            d3.csv("fakedata.csv", function (data) {
                 var canvas = d3.select("body").append("svg")
-                    .attr("width", 900)
-                    .attr("height", 900)
+                    .attr("width", 600)
+                    .attr("height", 600)
 
                 canvas.selectAll("rect")
                     .data(data)
                     .enter()
                         .append("rect")
-                        .attr("width", function (d) { return d.feet * 30; })
+                        .attr("width", function (d) { return d.feet * 10; })
                         .attr("height", 48)
-                        .attr("y", function (d, i) { return i * 50; })
-                        .attr("fill", "purple");
+                        .attr("y", function (d, i) { return i * 10; })
+                        .attr("fill", "white");
 
                 canvas.selectAll("text")
                     .data(data)
                     .enter()
                     .append("text")
-                    .attr("fill", "white")
-                    .attr("y", function (d, i) { return i * 50 + 20; })
+                    .attr("fill", "black")
+                    .attr("y", function (d, i) { return i * 10; })
                     .text(function (d) { return d.animal; });
-                
           
             })  
-       
+            d3.csv("fakedata.csv", function (data) {
+                console.log(data); });
         </script>
     </body> 
 </html>
