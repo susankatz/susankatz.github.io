@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>D3 02-14</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+   
+    </head>
+    <body>
+       <h1 id="title">Class Work 02-28</h1>
+        
+
+        <script>
+            d3.csv("file.csv")
+                .then(function(csvData) {
+                console.log(csvData);
+             });
+
+             d3.text("file.txt")
+                .then(function(data) {
+                    console.log(data);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+            d3.json("file.json")
+                .then(function(jsonData){
+                    console.log(jsonData);
+                });
+
+            var url = "https://datausa.io/api/data?measures=Population";
+// make a variable for url so you dont have to put it in recall function
+            d3.json(url)
+            .then(function(data) {
+            console.log(data);
+  });
+
+  // for APIs just drag file to a folder and it will automatically sync with visual code
+  // with coloumns with a string for a catergory name do d[column name] = parseFloat 
+  // == is a if than statement "compare these 2 things and say true or false"
+        </script>
+    </body>
+</html>
