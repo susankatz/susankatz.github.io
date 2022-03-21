@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100%;
+    display: grid;
+    background: rgb(238, 174, 202);
+    background: linear-gradient(30deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%) fixed;
+    }
+
+h1 {
+        text-align: center;
+        font-weight: bold;
+        /* font-family:sans-serif; */
+        /* color: rgba(88, 72, 97, 0.5); */
+        color: rgba(195, 180, 216, 1);
+        font-size:1.2cm;
+        text-shadow: 1px -1px 3px rgb(111, 134, 181),
+        -1px 1px 3px rgb(186, 127, 166);
+        } 
+
+h2 {
+        text-align: center;
+        color: rgb(233, 213, 222);
+        text-shadow: 1px -1px 3px rgb(111, 134, 181),
+        -1px 1px 3px rgba(88, 72, 97, 0.5);
+        font-size:.4cm;
+        } 
+
+
+.center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    font-family:sans-serif;
+    color: rgba(88, 72, 97, 0.5);
+    font-size:.3cm;
+}
+
+li a {text-decoration : none; color : #2d2f31;}
+
+
+nav {
+  width : 500px; 
+  background: linear-gradient(30deg,
+            rgba(210, 178, 212, 1) 0%,
+            rgba(177, 183, 223, 1) 100%);
+        color: rgba(192, 181, 218, 1);
+
+        box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.15),
+            1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+
+        text-shadow: 1px -1px 1px rgba(143, 162, 199, 0.75),
+            -1px 1px 1px rgba(192, 151, 178, 0.75);
+  margin : 40px auto; 
+}
+
+span {
+    padding : 30px;
+    background: rgb(238, 174, 202);
+    background: linear-gradient(20deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    color: rgb(206, 198, 218);;
+    font-size: .6cm;
+    font-weight: bold;
+    box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.25),
+        inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+        1px 1px 15px 2px rgba(154, 137, 164, 0.5);
+
+    text-shadow: 1px -1px 3px rgb(130, 153, 197),
+        -1px 1px 3px rgba(67, 55, 74, 0.5);
+     cursor : pointer;
+    display: block;
+}
+
+span::after {
+  float: right;
+  right: 10%;
+  content: "+";
+}
+
+.slide {
+  clear:both;
+  width:100%;
+  height:0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height .4s ease;
+}
+
+.slide li {padding : 30px;}
+
+#touch {position: absolute; opacity: 0; height: 0px;}    
+
+#touch:checked + .slide {height: 300px;}

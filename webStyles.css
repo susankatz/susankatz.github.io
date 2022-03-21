@@ -42,11 +42,11 @@ p {
     font-size:.5cm;
 }
 
-li a {text-decoration : none; color : #2d2f31;}
+li a {text-decoration : none; color : #2d2f31; text-align:center; }
 
 
 nav {
-  width : 500px; 
+  width : 400px; 
   background: linear-gradient(30deg,
             rgba(210, 178, 212, 1) 0%,
             rgba(177, 183, 223, 1) 100%);
@@ -65,7 +65,7 @@ span {
     background: rgb(238, 174, 202);
     background: linear-gradient(20deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     color: rgb(206, 198, 218);;
-    font-size: .9cm;
+    font-size: .6cm;
     font-weight: bold;
     box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.25),
         inset 0 2px 1px 1px rgba(255, 255, 255, 0),
@@ -92,7 +92,7 @@ span::after {
   transition: height .4s ease;
 }
 
-.slide li {padding : 30px;}
+.slide li {padding : 10px;}
 
 #touch {position: absolute; opacity: 0; height: 0px;}    
 

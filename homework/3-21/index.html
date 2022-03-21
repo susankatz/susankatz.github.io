@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>Homework 03-21</title>
+    <link rel="stylesheet" href="webStyles.css" />
+  </head>
+  <body>
+      <h1>Homework 03-21</h1>
+      <h2>Please check the console for the logged dataset.</h2>
+
+    <script>
+      d3.csv("winemag-data-130k-v2.csv")
+        .then(function(data) {
+          console.log(data);
+        });
+    </script>
+    
+     <p>
+       <a href="https://www.kaggle.com/zynicide/wine-reviews">Click me to go to the original data source</a>
+    </p>
+  </body>
+</html>
