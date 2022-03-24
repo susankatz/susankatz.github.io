@@ -1,0 +1,44 @@
+body {
+    margin:0;
+    display: grid;
+    background:#000000eb;
+    font-family: 'Courier New', monospace;
+    font-weight: lighter;
+    }
+
+h1 {
+        text-align: center;
+        font-weight: bold;
+        color: #ffff;
+        } 
+
+.center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+}
+
+.bar {
+    fill: rgb(17, 17, 18) ;
+    stroke-width:2;
+    stroke: white;
+
+}
+
+.tick {
+    stroke: white;
+    fill: white;
+    font-size: 14px;
+    font-family:'Courier New', 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+
+line {
+    stroke: white;
+}
+
+path.domain {
+    stroke: white;
+}
+
+
