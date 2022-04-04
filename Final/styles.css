@@ -72,6 +72,10 @@ h2 {
     
  }
 
+ .winemap svg {
+    border: 1px solid white;
+
+  }
 
   #tooltip {
     display: none;
