@@ -1,0 +1,79 @@
+body {
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+h1 {
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 50px; 
+    font-style: bold; 
+    font-variant: normal; 
+    font-weight: 1200; 
+    color:white; 
+    -webkit-text-stroke-color: rgb(143, 3, 3);
+    font-weight: bolder;
+    -webkit-text-stroke-width: .1px;  
+}
+
+h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+#banner {
+    background-image: url('why-i-love-good-fight-articleLarge-v2.gif');
+    background-repeat:no-repeat;
+    background-position: 50% 60%;
+    background-size: cover;
+    padding: 25vh 25px;
+    text-align: center;
+  }
+
+.text {
+    padding: 100px; 
+    text-align: center;
+}
+
+.section {
+  display: flex;
+  padding: 50px;
+}
+
+.section p {
+  flex: 2;
+}
+
+.section svg {
+  border: 1px solid white;
+  flex: 2;
+  height: 200px;
+  margin: 20px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+    .section {
+      flex-direction: column;
+    }
+    .section svg {
+      flex: none;
+    }
+  }
+.winemap {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 50px;
+    
+ }
+
+
+  #tooltip {
+    display: none;
+    position: absolute;
+  }
