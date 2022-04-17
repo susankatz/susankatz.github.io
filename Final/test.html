@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Wine Hunter</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    
+    <div id="banner">
+        <h1>The Wine Hunter's Map</h1>
+        <h2>
+           An interactive tool for finding perfect wines
+        </h2>
+        <h2>...and maybe even your next vacation destination!</h2>
+    </div>
+
+   
+    <div class="section">
+        <p> Every year, Wine Enthusiast Magazine complies and publishes reviews on over 24,000 wines across the globe. In each wine in review, a taste specialist provides a descriptive flavor profiling and documents the product's price, grape variety, and place of orgin. These data points are then ultimately used to determine the wine's "scoring", which is based on a 1 to 100 scale. This experience will focus on the 2017 wine reviews.  </p>
+        <svg id="chart1">
+            <image href="wineenthusiastlogo.jpg" height="100%" width="100%"/>
+        </svg>
+      </div>
+
+    <div class= "text">
+        <p>The user of the map below will be able to utilize the wine type (aka chardonnay, pinot noir, etc.) and price variables to identify which countries/states/areas produce the highest scoring products. (E.g. California produces the best red blends at the $10-$30 price point) </p>
+    </div>
+
+    <div class="flex-parent jc-center">
+        <button type="button" onclick="priceLevelOne();">$0-$25</button>
+        <button type="button" onclick="myFunction();">$25-$50</button>
+        <button type="button" onclick="myFunction();">$50-$250</button>
+        <button type="button" onclick="myFunction();">$250-$500</button>
+        <button type="button" onclick="myFunction();">$500+</button>
+        <button type="button" onclick="myFunction();">All Prices</button>
+  </div>
+
+    <div class="winemap">
+        <svg id="viz">
+            <rect id="ocean" fill="black" />
+            <g id="map"></g>
+            <!-- <g id="scale"> 
+              <rect id="scaleRect" fill="url(#scaleColor)"/>
+              <g id="scaleAxis"></g></g> -->
+        </svg>
+
+        <script src="./testmap.js"></script>
+        <script src="./pricelv1.js"></script>
+
+    </div>
+    
+    <div class="section">
+        <svg id="chart1">
+        </svg>
+        <p>Once the user has identified the country/area/region in the map above, they can use it in this chart to find the related wine titles and their exact prices/scores.</p>
+  </body>
+
+</html>

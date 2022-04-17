@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+
+    <script>
+      d3.csv("winemag-data-130k-v2.csv")
+        .then(function(data) {
+          console.log(data);
+        });
+    </script>
+    
     <div id="banner">
         <h1>The Wine Hunter's Map</h1>
         <h2>
@@ -16,7 +24,7 @@
         <h2>...and maybe even your next vacation destination!</h2>
     </div>
 
-    
+   
     <div class="section">
         <p> Every year, Wine Enthusiast Magazine complies and publishes reviews on over 24,000 wines across the globe. In each wine in review, a taste specialist provides a descriptive flavor profiling and documents the product's price, grape variety, and place of orgin. These data points are then ultimately used to determine the wine's "scoring", which is based on a 1 to 100 scale. This experience will focus on the 2017 wine reviews.  </p>
         <svg id="chart1">
