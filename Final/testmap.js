@@ -1,4 +1,10 @@
 
+// import  {buttonSelection} from './buttons.js';
+
+// buttonSelection(select('body'), {
+//     options: ['A', 'B', 'C']
+// });
+
 var width = 1000;
 var height = 1000;
 
@@ -54,52 +60,66 @@ d3.json("world-alpha3.json")
 
             var countryColor = d3.scaleSequential(d3.interpolatePuRd)
                  .domain([85, 91]);
-    
 
+            var countryColorOne = d3.scaleSequential(d3.interpolateYlGnBu)
+
+            var dataFilter = function (item) {
+                var myCountryData = wineData
+                   .filter(function(d) {
+                       return d.country === item.properties.name;
+                   });
+                   console.log()
+               if (myCountryData.length) {
+                   var blah = d3.mean(myCountryData, function (d) {
+                       return +d.points;
+                   })
+                   return countryColor(blah)
+               }
+               else {
+                   return "LightGray";
+               }
+            };
+// Filter 0-25
+            var dataFilterOne = function (item) {
+                var myCountryData = wineData
+                   .filter(function(d) {
+                       return d.country === item.properties.name
+                       ;
+                   });
+                   console.log();
+
+                var filterOne = myCountryData.filter(function (d) {
+                    return +d.price <= 25
+                })
+
+               if (filterOne.length) {
+                   var blah = d3.mean(myCountryData, function (d) {
+                       return +d.points;
+                   })
+                   return countryColorOne(blah)
+               }
+               else {
+                   return "LightGray";
+               }
+            };
+
+// enter countries 
             countries.enter().append("path")
                  .attr("d", path)
                  .attr("stroke-width", 1)
                  .attr("stroke", "black")
-                 .attr("fill", function (item) {
-                     var myCountryData = wineData
-                        .filter(function(d) {
-                            return d.country === item.properties.name;
-                        });
-                        console.log()
-                    if (myCountryData.length) {
-                        var blah = d3.mean(myCountryData, function (d) {
-                            return +d.points;
-                        })
-                        return countryColor(blah)
-                    }
-                    else {
-                        return "LightGray";
-                    }
-                 // 
-                 
-                });
-
-            function PriceLevelOne (){}
-
-            
-
-        }); });
-   
-
-
-
-
-            // var zoom = d3.zoom()
-            //             .translateExtent([[0, 0], [width, height]])
-            //             .scaleExtent([1, 8])
-            //             .on("zoom", zoomed);
-
-            // function zoomed(event) {
-            //         map.attr("transform", event.transform);
-            // }
-
-            // svg.call(zoom);
-            
-            
-      
-        
+                 .attr("fill", dataFilter);
+// zero state
+            function zeroState(selection) {
+                selection
+                .attr("fill", white);
+// update map
+            function updateOne() {
+                countries.call(zeroState)
+                .transition().duration(100)
+                .attr("fill", dataFilterOne);
+            }
+           
+            };
+        });
+    })
