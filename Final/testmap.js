@@ -89,7 +89,7 @@ d3.json("world-alpha3.json")
                    console.log();
 
                 var filterOne = myCountryData.filter(function (d) {
-                    return +d.price <= 25
+                    return +d.price <= 25;
                 })
 
                if (filterOne.length) {
@@ -112,10 +112,11 @@ d3.json("world-alpha3.json")
 // zero state
             function zeroState(selection) {
                 selection
-                .attr("fill", white);
+                .attr("fill", "white");
 // update map
             function updateOne() {
-                countries.call(zeroState)
+                countries.selectAll("path")
+                .call(zeroState)
                 .transition().duration(100)
                 .attr("fill", dataFilterOne);
             }
