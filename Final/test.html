@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    
+
     <div id="banner">
         <h1>The Wine Hunter's Map</h1>
         <h2>
@@ -18,7 +18,7 @@
         <h2>...and maybe even your next vacation destination!</h2>
     </div>
 
-   
+
     <div class="section">
         <p> Every year, Wine Enthusiast Magazine complies and publishes reviews on over 24,000 wines across the globe. In each wine in review, a taste specialist provides a descriptive flavor profiling and documents the product's price, grape variety, and place of orgin. These data points are then ultimately used to determine the wine's "scoring", which is based on a 1 to 100 scale. This experience will focus on the 2017 wine reviews.  </p>
         <svg id="chart1">
@@ -31,29 +31,42 @@
     </div>
 
     <div class="flex-parent jc-center">
-        <button type="button" onclick="updateDataOne();">$0-$25</button>
-        <button type="button" onclick="myFunction();">$25-$50</button>
-        <button type="button" onclick="myFunction();">$50-$250</button>
-        <button type="button" onclick="myFunction();">$250-$500</button>
-        <button type="button" onclick="myFunction();">$500+</button>
-        <button type="button" onclick="myFunction();">All Prices</button>
+        <button type="button" class="rangeButton" id="range0-25">$0-$25</button>
+        <button type="button" class="rangeButton" id="range25-50">$25-$50</button>
+        <button type="button" class="rangeButton" id="range50-250">$50-$250</button>
+        <button type="button" class="rangeButton" id="range250-500">$250-$500</button>
+        <button type="button" class="rangeButton" id="range500-10000000">$500+</button>
+        <button type="button" class="rangeButton" id="rangeAll">All Prices</button>
   </div>
 
     <div class="winemap">
         <svg id="viz">
+          <defs>
+            <linearGradient id="colorGradient">
+            </linearGradient>
+        </defs>
             <rect id="ocean" fill="black" />
             <g id="map"></g>
-            <!-- <g id="scale"> 
-              <rect id="scaleRect" fill="url(#scaleColor)"/>
-              <g id="scaleAxis"></g></g> -->
+            <g id="scale">
+              <rect id="scaleRect" fill="url(#colorGradient)"/>
+              <g id="scaleAxis"></g>
+          </g>
         </svg>
 
         <script src="./testmap.js"></script>
 
     </div>
-    
+
+    <div id="tooltip">
+      Country: <span id="country"></span>
+      <br />
+      Average Score: <span id="points"></span>
+      <br />
+      No. Wine Tasted: <span id="totalWines"></span>
+  </div>
+
     <div class="section">
-        <svg id="chart1">
+        <svg id="wineNameChart">
         </svg>
         <p>Once the user has identified the country/area/region in the map above, they can use it in this chart to find the related wine titles and their exact prices/scores.</p>
   </body>
