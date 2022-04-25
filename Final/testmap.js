@@ -1,8 +1,8 @@
 
-var width = 1200;
-var height = 1200;
+var width = 1500;
+var height = 1500;
 
-var mapHeight = height - 200;
+var mapHeight = height-100;
 var mapWidth = width;
 
 // Map        
@@ -19,10 +19,10 @@ svg.select("#ocean")
 var map = svg.select("#map");
 
 // Scale
-var scaleWidth = 1000;
-var scaleHeight = 35;
+var scaleWidth = 1450;
+var scaleHeight = 45;
 var scaleX = mapWidth / 2 - (scaleWidth / 2);
-var scaleY = mapHeight + 100;
+var scaleY = mapHeight;
 var scale = svg.select("#scale")
         .attr("transform", "translate(" + scaleX + ", " + scaleY + ")");
 
@@ -64,7 +64,9 @@ d3.json("world-alpha3.json")
           var pointExtent = d3.extent(wineData, function (d) {
               return d.points;
           });
-
+          var maxPointExtent = d3.max(wineData, function (d) {
+            return d.points;
+        });
           var countryColor = d3.scaleSequential(d3.interpolateInferno)
           .domain(pointExtent); 
           
@@ -139,9 +141,6 @@ d3.json("world-alpha3.json")
           }
 
           // Scale Variables 
-       var maxPointExtent = d3.max(wineData, function (d) {
-        return d.points;
-    });
 
         var scaleColor = d3.scaleSequential(d3.interpolateInferno)
         .domain([0, maxPointExtent]); 
@@ -151,11 +150,14 @@ d3.json("world-alpha3.json")
 
         var gradientScale = d3.scaleLinear()
         .domain(pointExtent)
-        .range([0, scaleWidth]);;  
+        .range([0, scaleWidth])
+        ;  
 
         var scaleAxis = d3.axisBottom(gradientScale);
 
         scale.select("#scaleAxis")
+            .style("font-size", "25")
+            .style("font-family","'Bebas Neue', cursive")
             .attr("transform", "translate(0, " + scaleHeight + ")")
             .call(scaleAxis);
 

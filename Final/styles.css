@@ -1,27 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+
 body {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    margin: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    margin: 0px;
     background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 40px;
 }
 
 h1 {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    font-size: 50px; 
-    font-style: bold; 
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 120px; 
     font-variant: normal; 
     font-weight: 1200; 
-    color:white; 
-    -webkit-text-stroke-color: rgb(143, 3, 3);
+    color:rgba(74, 17, 17, 0.632); 
+    -webkit-text-stroke-color: rgba(74, 17, 17, 0.632);
     font-weight: bolder;
-    -webkit-text-stroke-width: .1px;  
+    /* -webkit-text-stroke-width: .1px;   */
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(94, 48, 48),
+    0 0 82px rgb(94, 48, 48),
+    0 0 92px rgb(94, 48, 48),
+    0 0 102px rgb(94, 48, 48),
+    0 0 151px rgb(94, 48, 48);
 }
 
 h2 {
-    color: white;
+    color: rgba(52, 9, 9, 0.632);
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 40px;
+    -webkit-text-stroke-color: rgba(74, 17, 17, 0.632);
+    font-weight: bolder;
+    -webkit-text-stroke-width: .1px;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(94, 48, 48),
+    0 0 82px rgb(94, 48, 48),
+    0 0 92px rgb(94, 48, 48),
+    0 0 102px rgb(94, 48, 48),
+    0 0 151px rgb(94, 48, 48);
 }
 
 
@@ -30,18 +55,44 @@ h2 {
     background-repeat:no-repeat;
     background-position: 50% 60%;
     background-size: cover;
-    padding: 25vh 25px;
+    margin: 20PX;
+    padding: 5vh 5px;
     text-align: center;
   }
 
 .text {
-    padding: 100px; 
+    padding: 0px; 
     text-align: center;
+    margin: 100px;
+    /* text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff; */
+    /* border: 1px solid white;
+  
+}
+
+.red {
+  color: white;
+  font-size: 35px;
+  /* text-shadow: 1px -1px 3px rgba(143, 162, 199, 1),
+        -1px 1px 3px rgba(154, 137, 164, 0.5);
+      color: #fff; */
+  /* text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(94, 48, 48),
+    0 0 82px rgb(94, 48, 48),
+    0 0 92px rgb(94, 48, 48);
+    /* 0 0 102px #fff,
+    0 0 151px #fff; */ 
 }
 
 .section {
   display: flex;
   padding: 50px;
+  margin: 50px;
 }
 
 .section p {
@@ -49,11 +100,12 @@ h2 {
 }
 
 .section svg {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   flex: 2;
   height: 200px;
   margin: 20px;
   text-align: center;
+  
 }
 
 @media (max-width: 600px) {
@@ -68,9 +120,10 @@ h2 {
     display:flex;
     align-items:center;
     justify-content:center;
-    padding: 50px;
+    padding: 0px;
     
  }
+
 
  /* .winemap svg {
     border: 1px solid white;
@@ -84,13 +137,15 @@ h2 {
 
   button {
     margin: auto;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
     padding: 0;
     border: none;
     border-radius: 8%;
-    width: 110px;
-    height: 40px;
+    width: 170px;
+    height: 50px;
     background: rgb(138, 60, 110);
-    background: linear-gradient(30deg, rgb(154, 49, 82) 0%, rgb(99, 19, 45) 100%);
+    background: linear-gradient(30deg, rgba(140, 49, 99, 0.632) 0%, rgba(74, 17, 17, 0.632) 100%);
     color: rgb(222, 212, 237);
     /* font-size: 3.6em;
     font-weight: 600; */
@@ -138,21 +193,28 @@ button:active {
 
 .flex-parent {
   display: flex;
+  margin:100px;
+  padding: 0px;
 }
 
 .jc-center {
   justify-content: center;
 }
-button.margin-right {
-  margin-right: 20px;
+button.margin {
+  margin-right: 50px;
 }
 
 
 #tooltip {
   background-color: #555;
   border: 1px solid #555;
+  font-size: 28px;
   border-radius: 6px;
   display: none;
   padding: 10px;
   position: absolute;
+}
+
+.list {
+  margin: 90px;
 }

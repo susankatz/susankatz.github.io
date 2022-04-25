@@ -11,18 +11,20 @@
   <body>
 
     <div id="banner">
-        <h1>The Wine Hunter's Map</h1>
+        <h1>THE WINE HUNTER'S MAP</h1>
         <h2>
-           An interactive tool for finding perfect wines
+          EVERY YEAR, WINE ENTHUSIASTS' CONNOISEURS TRAVEL ACROSS THE GLOBE TO TASTE AND REVIEW THE VARIOUS WINES OF THE WORLD.
         </h2>
-        <h2>...and maybe even your next vacation destination!</h2>
+        <h2>DISCOVER WHERE THE EXPERTS FOUND THEIR FAVORITE WINES.</h2>
     </div>
 
     <div class= "text">
-        <p>The user of the map below will be able to utilize the wine type (aka chardonnay, pinot noir, etc.) and price variables to identify which countries/states/areas produce the highest scoring products. (E.g. California produces the best red blends at the $10-$30 price point) </p>
+        <p class="red">Hover over the map to view the quantity of wines sampled in each country and the average score they received. </p>
+        <p class="red">Use the buttons to filter the results based on a specific price range.</p>
     </div>
 
     <div class="flex-parent jc-center">
+
         <button type="button" class="rangeButton" id="range0-25">$0-$25</button>
         <button type="button" class="rangeButton" id="range25-50">$25-$50</button>
         <button type="button" class="rangeButton" id="range50-250">$50-$250</button>
@@ -46,7 +48,6 @@
         </svg>
 
         <script src="./testmap.js"></script>
-
     </div>
 
     <div id="tooltip">
@@ -56,9 +57,28 @@
       <br />
       No. Wine Tasted: <span id="totalWines"></span>
   </div>
+  <div class= "text">
+    <p>*Wines sampled are scored using a 0 to 100 point scale, in which 100 points represents the highest possible score.</p>
+</div>
+<div class="list">
+  <ol>
+    <h2>So, what can we conclude from this data?</h2>
+      <li>Across all price ranges, Austria's average wine rating was amongnst the top scoring countries</li>
+      <li>If you're looking to buy a wine at the $500+ price point, Wine Enthusiast's connoiseurs found that Australian and French wines were on average the best </li>
+      <li>Need to impressive your guests at a dinner party? You can get a bottle of wine for $25-$50 from Germany or Portugal. On average, these two countries produce the best wines at this price range.</li>
+      <li>Want a bottle of wine for under $25? Indian wines, on average, score the highest in this price range.</li>
+  </ol>
+</div>
+<div class="list">
+  <ol>
+    <h2>Things to keep in mind when using this tool fo analysis:</h2>
+      <li>This data accounts for all varieties of wine, so averages can differ when searching for a specific type of wine</li>
+      <li>The average wine scores do not account for the varying quantities of samples taken per country  </li>
 
+  </ol>
+</div>
   <div class="section">
-    <p> Every year, Wine Enthusiast Magazine complies and publishes reviews on over 24,000 wines across the globe. In each wine in review, a taste specialist provides a descriptive flavor profiling and documents the product's price, grape variety, and place of orgin. These data points are then ultimately used to determine the wine's "scoring", which is based on a 1 to 100 scale. This experience will focus on the 2017 wine reviews.  </p>
+    <p> Wine Enthusiast is a reputable magazine and brand that is known for their yearly reviews on over 24,000 wines across the globe. In each wine in review, their taste specialists provides descriptive flavor profiling and documentation of the products' price, grape variety, and place of orgin. These data points are then ultimately used to determine the wine's "scoring". This experience focuses on the 2017 wine reviews.  </p>
     <svg id="chart1">
         <image href="wineenthusiastlogo.jpg" height="100%" width="100%"/>
     </svg>
