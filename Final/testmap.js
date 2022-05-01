@@ -102,7 +102,7 @@ d3.json("world-alpha3.json")
                   return countryColor(averagePoints);
                 }
                 else {
-                  return "LightGray";
+                  return "#2A2726";
                 }
 
               })
@@ -173,13 +173,24 @@ d3.json("world-alpha3.json")
                 return scaleColor(d * maxPointExtent)
             }
             );
+            var currentVariety = "Cabernet Sauvignon";
+            var range = "All"
 
 // Filter Data
-          function filterData(range) {
-            var extent = range.split("-").map(Number);
+          function filterData() {
+            if (range === "All") {
             return wineData.filter(function(d) {
-              return d.price >= extent[0] && d.price <= extent[1];
+              return d.variety==currentVariety;
             });
+
+            }
+            else {
+                var extent = range.split("-").map(Number);
+                return wineData.filter(function(d) {
+                  return d.price >= extent[0] && d.price <= extent[1] && d.variety==currentVariety;
+                });
+            }
+            
           }
 
           var startingData = filterData("0-25");
@@ -188,53 +199,26 @@ d3.json("world-alpha3.json")
           d3.selectAll(".rangeButton")
             .on("click", function() {
 
-              var range = this.id.replace("range", "");
-
-              if (range === "All") drawMap(wineData);
-              else {
-                var rangeData = filterData(range);
-                drawMap(rangeData);
-              }
-            });
-// Connected Chart event 
-            
-        // function drawOtherChart (topTenData) {
-        //     var svg2 = d3.select("#wineNameChart")
-            
-        //     svg2.selectAll()
-        // }  
-
-           
-       
-        //     function drawScale (wineData) {
-        //         var selectedCountries = wineData.getElementById("country").value;
-        //         var selectedPoints = wineData.getElementById("points").value;
-
-        //         var filteredDataScale = wineData.filter(function(d) {
-        //             return  d.country == selectedCountries &&
-        //                     d.points == selectedPoints;
-        // });
-
-        //         console.log(filteredDataScale);//RETURNING EMPTY ARRAY?
-
-            //      mean = d3.mean(filteredData,function(d) { return d.points})
-
-                
-            //     var myCountryDataScale = wineData
-            //             .filter(function(d) {
-            //             return d.country === item.properties.name;
-            //             });
+            range = this.id.replace("range", "");
+            var rangeData = filterData();
+            drawMap(rangeData);
             
               
-          
-            // }
-            // drawScale(filteredDataScale);
+    
+            });
+// Drop down
+
+// sele id in option is the actual name of the wine # is the id of the overall select/ drop down 
+d3.select("#mydropdown")
+            .on("change", function() {
+
+              currentVariety = this.value; //(drop downs are values in java/ the data)
+                var rangeData = filterData();
+                drawMap(rangeData);
+            });
+            
       });
       
   });
 
-//   function (d) { 
-//     return countryColor(d * d3.max(wineData, function (d){
-//     return d.points; 
-//  }
 

@@ -23,6 +23,23 @@
         <p class="red">Use the buttons to filter the results based on a specific price range.</p>
     </div>
 
+<div class="select">
+    <label for="Wine Variety">Choose a Wine Variety:</label>
+
+    <select name="Wine Variety" id="mydropdown">
+      <option value="White Blend">White Blend</option>
+      <option value="Pinot Gris">Pinot Gris</option>
+      <option value="Riesling">Riesling</option>
+      <option value="Pinot Noir">Pinot Noir</option>
+      <option value="Cabernet Sauvignon" selected>Cabernet Sauvignon</option>
+      <option value="Chardonnay">Chardonnay</option>
+      <option value="Malbec">Malbec</option>
+      <option value="Merlot">Merlot</option>
+      <option value="Red Blend">Red Blend</option>
+      <option value="Bordeaux-style Red Blend">Bordeaux</option>
+      <option value="Sauvignon Blanc">Sauvignon Blanc</option>
+    </select>
+  </div>
     <div class="flex-parent jc-center">
 
         <button type="button" class="rangeButton" id="range0-25">$0-$25</button>
@@ -84,10 +101,6 @@
         <image href="wineenthusiastlogo.jpg" height="100%" width="100%"/>
     </svg>
   </div>
-    <div class="section">
-        <svg id="wineNameChart">
-        </svg>
-        <p>Once the user has identified the country/area/region in the map above, they can use it in this chart to find the related wine titles and their exact prices/scores.</p>
   </body>
 
 </html>

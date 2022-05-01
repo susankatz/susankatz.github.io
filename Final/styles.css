@@ -218,3 +218,28 @@ button.margin {
 .list {
   margin: 90px;
 }
+
+select {
+  appearance: none;
+  outline: 0;
+  background: rgba(255, 254, 255, 0.44);
+  background-image: none;
+  width: 600px;
+  height: 50px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: auto;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
+}
+
+.select {
+  justify-content: center;
+  align-items:center;
+  position: relative;
+   display: block;
+   text-align: center;
+   margin: 100px;
+}
